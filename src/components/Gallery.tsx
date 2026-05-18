@@ -1,20 +1,28 @@
 import { useState } from 'react'
+import servicemesin from '../assets/service_mesin.jpeg'
+import antikarat from '../assets/anti_karat.jpeg'
+import dashboardcare from '../assets/dashboard_care.jpeg'
+import interiordetailing from '../assets/interior_detailing.jpeg'
+import polescoating from '../assets/poles_coating.jpeg'
+import servicerem from '../assets/service_rem.jpeg'
+import tuneup from '../assets/tuneup.jpeg'
+
 
 const categories = ['Semua', 'Service', 'Sparepart', 'Cuci', 'Salon']
 
 // Dummy gallery items - replace src with actual photos
 const galleryItems = [
-  { id: 1, category: 'Service', label: 'Servis Mesin', color: '#1e3a5f' },
+  { id: 1, category: 'Service', label: 'Servis Mesin', color: '#1e3a5f', src: servicemesin },
   { id: 2, category: 'Cuci', label: 'Cuci Eksterior', color: '#1a4a2e' },
-  { id: 3, category: 'Salon', label: 'Poles & Coating', color: '#3a1a1a' },
+  { id: 3, category: 'Salon', label: 'Poles & Coating', color: '#3a1a1a', src: polescoating },
   { id: 4, category: 'Sparepart', label: 'Spare Part', color: '#2a1a4a' },
-  { id: 5, category: 'Service', label: 'Tune Up', color: '#1e3a5f' },
-  { id: 6, category: 'Cuci', label: 'Interior Detailing', color: '#1a4a2e' },
-  { id: 7, category: 'Salon', label: 'Anti Karat', color: '#3a1a1a' },
-  { id: 8, category: 'Service', label: 'Servis Rem', color: '#1e3a5f' },
+  { id: 5, category: 'Service', label: 'Tune Up', color: '#1e3a5f', src: tuneup },
+  { id: 6, category: 'Cuci', label: 'Interior Detailing', color: '#1a4a2e', src: interiordetailing },
+  { id: 7, category: 'Salon', label: 'Anti Karat', color: '#3a1a1a', src: antikarat },
+  { id: 8, category: 'Service', label: 'Servis Rem', color: '#1e3a5f', src: servicerem },
   { id: 9, category: 'Sparepart', label: 'Aksesori', color: '#2a1a4a' },
   { id: 10, category: 'Cuci', label: 'Poles Velg', color: '#1a4a2e' },
-  { id: 11, category: 'Salon', label: 'Dashboard Care', color: '#3a1a1a' },
+  { id: 11, category: 'Salon', label: 'Dashboard Care', color: '#3a1a1a', src: dashboardcare },
   { id: 12, category: 'Service', label: 'Sistem Pendingin', color: '#1e3a5f' },
 ]
 
@@ -65,7 +73,11 @@ export default function Gallery() {
         <div className="gallery-grid">
           {filtered.map((item) => (
             <div className="gallery-item" key={item.id}>
-              <CameraPlaceholder label={item.label} color={item.color} />
+              {'src' in item && item.src ? (
+                <img src={item.src} alt={item.label} className="gallery-img" />
+              ) : (
+                <CameraPlaceholder label={item.label} color={item.color} />
+              )}
               <div className="gallery-item-overlay">
                 <span className="gallery-category-badge">{item.category}</span>
                 <p>{item.label}</p>
