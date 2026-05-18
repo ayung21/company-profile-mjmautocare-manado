@@ -36,7 +36,7 @@ export default function Hero() {
             Lihat Layanan
           </a>
           <a
-            href="https://wa.me/628114333331"
+            href="https://wa.me/628884333311"
             className="btn-outline"
             target="_blank"
             rel="noopener noreferrer"
@@ -54,7 +54,7 @@ export default function Hero() {
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            Senin – Sabtu, 08.00 – 17.00 WITA
+            Senin – Sabtu, 08.00 – 18.00 WITA
           </div>
           <div className="hero-info-divider" />
           <div className="hero-info-item">
