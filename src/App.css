@@ -1152,3 +1152,66 @@
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .hero-info-strip { display: none; }
 }
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+
+.hours-time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+.hours-slot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hours-slot-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+.hours-slot-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.schedule-status-multi {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+.schedule-status-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.status-type {
+  color: var(--text-muted);
+  min-width: 70px;
+  text-align: right;
+}
+.status-time {
+  color: var(--text);
+  font-weight: 500;
+}
